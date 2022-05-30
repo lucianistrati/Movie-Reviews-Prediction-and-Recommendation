@@ -1,0 +1,106 @@
+******************************
+SVC()
+MAE: 1.927
+BEST MAE: 1e+18 best mdel:   0
+******************************
+SVR()
+MAE: 2.014548180566993
+BEST MAE: 1.927 best mdel:  SVC() 1
+******************************
+BernoulliNB()
+MAE: 1.985
+BEST MAE: 1.927 best mdel:  SVC() 2
+******************************
+MultinomialNB()
+MAE: 1.648
+BEST MAE: 1.927 best mdel:  SVC() 3
+******************************
+Perceptron()
+MAE: 1.672
+BEST MAE: 1.648 best mdel:  MultinomialNB() 4
+******************************
+AdaBoostClassifier()
+MAE: 2.131
+BEST MAE: 1.648 best mdel:  MultinomialNB() 5
+******************************
+RandomForestClassifier()
+MAE: 2.148
+BEST MAE: 1.648 best mdel:  MultinomialNB() 6
+******************************
+DecisionTreeClassifier()
+MAE: 2.729
+BEST MAE: 1.648 best mdel:  MultinomialNB() 7
+[20:43:36] WARNING: /home/conda/feedstock_root/build_artifacts/xgboost_1593723605503/work/src/learner.cc:480:
+Parameters: { class_weight } might not be used.
+
+  This may not be accurate due to some parameters are only used in language bindings but
+  passed down to XGBoost core.  Or some parameters are not used but slip through this
+  verification. Please open an issue if you find above cases.
+
+
+******************************
+XGBClassifier()
+MAE: 1.64
+BEST MAE: 1.648 best mdel:  MultinomialNB() 8
+******************************
+DecisionTreeRegressor()
+MAE: 2.506
+BEST MAE: 1.64 best mdel:  XGBClassifier() 9
+******************************
+RandomForestRegressor()
+MAE: 1.94923
+BEST MAE: 1.64 best mdel:  XGBClassifier() 10
+******************************
+XGBRegressor()
+MAE: 1.7673946658670903
+BEST MAE: 1.64 best mdel:  XGBClassifier() 11
+******************************
+Ridge()
+MAE: 3.1328848704304266
+BEST MAE: 1.64 best mdel:  XGBClassifier() 12
+******************************
+Lasso()
+MAE: 3.0697057800480794
+BEST MAE: 1.64 best mdel:  XGBClassifier() 13
+******************************
+MLPRegressor()
+MAE: 2.3731664753401036
+BEST MAE: 1.64 best mdel:  XGBClassifier() 14
+******************************
+AdaBoostRegressor()
+MAE: 2.8904451272962106
+BEST MAE: 1.64 best mdel:  XGBClassifier() 15
+******************************
+KNeighborsClassifier()
+MAE: 3.228
+BEST MAE: 1.64 best mdel:  XGBClassifier() 16
+******************************
+KNeighborsRegressor()
+MAE: 2.7454
+BEST MAE: 1.64 best mdel:  XGBClassifier() 17
+******************************
+SGDClassifier()
+MAE: 1.613
+BEST MAE: 1.64 best mdel:  XGBClassifier() 18
+******************************
+SGDRegressor()
+MAE: 44094011324.476234
+BEST MAE: 1.613 best mdel:  SGDClassifier() 19
+******************************
+LinearRegression()
+MAE: 4.462144157599505
+BEST MAE: 1.613 best mdel:  SGDClassifier() 20
+/home/lucianistrati/anaconda3/envs/luci_env/lib/python3.7/site-packages/sklearn/linear_model/_logistic.py:764: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  extra_warning_msg=_LOGISTIC_SOLVER_CONVERGENCE_MSG)
+******************************
+LogisticRegression()
+MAE: 1.504
+BEST MAE: 1.613 best mdel:  SGDClassifier() 21
+###
+LogisticRegression() 1.504

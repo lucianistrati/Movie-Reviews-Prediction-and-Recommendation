@@ -1,0 +1,11 @@
+# USE METRIC IS MAE -> LOWER -> BETTER
+
+[5] * 2000: MAE: 3.336
+SVC with no class_weight: MAE: 3.017
+SVC with class_weight: MAE: 1.927
+
+LOGREG(class_weight) -> 1.504
+LOGREG(no_class_weight -> 1.443
+
+log_reg_no_finetune_balanced -> 3.86
+log_reg_no_finetune_unbalanced  -> 4.004

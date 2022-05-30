@@ -1,0 +1,3 @@
+3.86 log reg no finetune (Test), on val (1.5, 1.44)
+worse with very little when imbalancing the data
+3.874 log reg class_weight
