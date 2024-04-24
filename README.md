@@ -1,71 +1,70 @@
-# Movie-Reviews-Prediction-and-Recommendation
+# Movie Reviews Prediction and Recommendation
 
------ What to do -----
+## What to Do
 
-- You are going to train a model on a given test set, using whatever tools you feel like, and submit predictions on an unlabeled test set
-- Your predictions will be scored using a service we have set up, and the score will be returned back to you. We will also keep a log of the scores you have got.
-- You can submit at most 20 sets of predictions per day
-- The predictions must be submitted in the same order as the documents in the test directory. 
-  E.g. the first prediction must be for "reviews0.txt", the second for "reviews1.txt" and so forth.
+In this project, you will train a model on a provided training set and submit predictions on an unlabeled test set. Your predictions will be scored using a service we have set up, and the score will be returned to you. Please note the following guidelines:
 
+- You can submit up to 20 sets of predictions per day.
+- Predictions must be submitted in the same order as the documents in the test directory. For example, the first prediction must be for "reviews0.txt", the second for "reviews1.txt", and so forth.
 
+## About the Data
 
------ About the data -----
+The dataset consists of a collection of movie reviews, where each review is represented as pure text. The training examples are labeled with a "score," which is the value you are going to predict. The "score" ranges from 1 to 10, representing the rating given for each review. The dataset includes 10,000 labeled training examples and 2,000 unlabeled test examples.
 
-- The data is a collection of movie reviews. Each movie review is a pure text
-- The training examples are labeled with a "score", which is the values you are going to predict
-- The "score" is a value from 1 to 10, which is the rating given for this review
-- For each training sample the first row of the file is the label, the rest is the content of the review
-- 10,000 training examples (with labels) are given, and 2,000 test examples (without labels) are given
+## Scoring Function
 
+The scoring function used for evaluation is the Mean Absolute Error (MAE), where a lower score indicates better performance. The MAE measures the average absolute difference between the predicted and actual values.
 
+For detailed information about the MAE, refer to: [Mean Absolute Error](https://en.wikipedia.org/wiki/Mean_absolute_error)
 
------ What scoring function is used? -----
+## How to Submit Your Predictions
 
-Mean absolute error (https://en.wikipedia.org/wiki/Mean_absolute_error)
---> A lower score is better
+### Using Python
 
-The scoring function acepts both integers and decimal numbers.
+If you have Python installed, you can use the provided module called 'score_predictions.py' to submit your predictions. You have two options:
 
+#### Option 1:
 
+Import the 'score' method from the module and use it to submit your predictions. Example:
 
------ How to submit your predictions -----
-
---- If you have python installed ---
-If you have python installed, we have created a module that you can use to submit the predictions called 'score_predictions.py'.
-You can either import the 'score' method from this module or use the 'score_predictions_from_file' method from the command line.
-
-
-Example 1:
-
+```python
 from score_predictions import score
 predictions = model.predict(X)
 score = score(list(predictions))
+```
 
-Example 2:
+#### Option 2:
 
-1. Write predictions (separated by commas) to file, e.g. "1,10,3,5,2" -> predictions.csv
-2. Execute the following in the command line: 
+Write your predictions to a file (separated by commas) and use the command line to execute the scoring script. Example:
 
-	python score_predictions.py predictions.csv
+1. Write predictions to file, e.g., "1,10,3,5,2" -> predictions.csv
+2. Execute the following command:
 
+```bash
+python score_predictions.py predictions.csv
+```
 
---- If you do not have python installed: ---
-If you do not want to use python, you can submit from anything able to send an http-request. 
-Instructions:
+### Without Python
 
-- Send POST requests to the API url you we're given
-- The body of the request must be a JSON with one entry with the key 'predictions'. Example:
+If you do not have Python installed or prefer not to use it, you can submit predictions using any tool capable of sending an HTTP request. Follow these instructions:
 
-	{
-	  "predictions": [1,10,3,5,2]
-	}
+- Send POST requests to the API URL provided to you.
+- The request body must be a JSON object with one entry, with the key 'predictions'. Example:
 
-- The request header must contain the header value "x-api-key". Example:
+```json
+{
+  "predictions": [1,10,3,5,2]
+}
+```
 
+- Include the "x-api-key" header in the request with the value provided to you. Example:
 
-	{
-	  "x-api-key": <the key you were given>
-	}
+```json
+{
+  "x-api-key": "<your-api-key>"
+}
+```
+
+Feel free to reach out if you have any questions or need further assistance!
 
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
