@@ -66,5 +66,3 @@ If you do not have Python installed or prefer not to use it, you can submit pred
 ```
 
 Feel free to reach out if you have any questions or need further assistance!
-
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
